@@ -37,4 +37,9 @@ public class Book {
         Book b = (Book) other;
         return titleBook.equals(b.titleBook);
     }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(titleBook);
+    }
 }
