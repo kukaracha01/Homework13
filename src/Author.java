@@ -10,12 +10,22 @@ public class Author {
     //    public String getFirstNameAuthor() {
 //        return this.firstNameAuthor;
 //    }
+//
 //    public String getSecondNameAuthor() {
 //        return this.secondNameAuthor;
 //    }
     @Override
     public String toString() {
         return this.firstNameAuthor + " " + this.secondNameAuthor;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        Author a = (Author) other;
+        return firstNameAuthor.equals(a.firstNameAuthor);
     }
 }
 

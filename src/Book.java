@@ -13,9 +13,9 @@ public class Book {
 //        return this.titleBook;
 //    }
 //
-//public String getAuthorBook() {
-//    return this.authorBook.getNameAuthor();
-//}
+//    public String getAuthorBook() {
+//        return this.authorBook.toString();
+//    }
 //
 //    public int getYearBook() {
 //        return this.yearBook;
@@ -25,8 +25,16 @@ public class Book {
 //        this.yearBook = yearBook;
 //    }
 
+    //    @Override
+//    public String toString() {
+//        return this.titleBook + ": " + this.authorBook.toString() + ", " + this.yearBook;
+//    }
     @Override
-    public String toString() {
-        return this.titleBook + ": " + this.authorBook.toString() + ", " + this.yearBook;
+    public boolean equals(Object other) {
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+        Book b = (Book) other;
+        return titleBook.equals(b.titleBook);
     }
 }
