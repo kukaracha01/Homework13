@@ -7,13 +7,14 @@ public class Author {
         this.secondNameAuthor = secondNameAuthor;
     }
 
-    //    public String getFirstNameAuthor() {
-//        return this.firstNameAuthor;
-//    }
-//
-//    public String getSecondNameAuthor() {
-//        return this.secondNameAuthor;
-//    }
+    public String getFirstNameAuthor() {
+        return this.firstNameAuthor;
+    }
+
+    public String getSecondNameAuthor() {
+        return this.secondNameAuthor;
+    }
+
     @Override
     public String toString() {
         return this.firstNameAuthor + " " + this.secondNameAuthor;
@@ -25,12 +26,12 @@ public class Author {
             return false;
         }
         Author a = (Author) other;
-        return firstNameAuthor.equals(a.firstNameAuthor);
+        return this.toString().equals(a.toString());
     }
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(firstNameAuthor);
+        return java.util.Objects.hash(this.toString());
     }
 }
 

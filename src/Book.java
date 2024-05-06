@@ -9,37 +9,38 @@ public class Book {
         this.yearBook = yearBook;
     }
 
-//    public String getTitleBook() {
-//        return this.titleBook;
-//    }
-//
-//    public String getAuthorBook() {
-//        return this.authorBook.toString();
-//    }
-//
-//    public int getYearBook() {
-//        return this.yearBook;
-//    }
-//
-//    public void setYearBook(int yearBook) {
-//        this.yearBook = yearBook;
-//    }
+    public String getTitleBook() {
+        return this.titleBook;
+    }
 
-    //    @Override
-//    public String toString() {
-//        return this.titleBook + ": " + this.authorBook.toString() + ", " + this.yearBook;
-//    }
+    public String getAuthorBook() {
+        return this.authorBook.toString();
+    }
+
+    public int getYearBook() {
+        return this.yearBook;
+    }
+
+    public void setYearBook(int yearBook) {
+        this.yearBook = yearBook;
+    }
+
+    @Override
+    public String toString() {
+        return this.titleBook + ": " + this.authorBook.toString() + ", " + this.yearBook;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (this.getClass() != other.getClass()) {
             return false;
         }
         Book b = (Book) other;
-        return titleBook.equals(b.titleBook);
+        return this.toString().equals(b.toString());
     }
 
     @Override
     public int hashCode() {
-        return java.util.Objects.hash(titleBook);
+        return java.util.Objects.hash(this.toString());
     }
 }
